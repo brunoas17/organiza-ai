@@ -26,12 +26,12 @@ const allowCors = (req, res, next) => {
 app.use(allowCors);
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/dist"));
+app.use(express.static(__dirname + "/dist/organizaai"));
 
 // servir o index.html do angular
 
 app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/dist/index.html");
+  res.sendFile(__dirname + "/dist/organizaai/index.html");
 });
 
 app.listen(port, async () => {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../../../core/layouts/header/header.component';
 
 @Component({
   selector: 'app-register',

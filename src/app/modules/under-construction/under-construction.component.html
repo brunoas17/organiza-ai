@@ -1,5 +1,17 @@
-<div style="text-align: center;">
-  <img src="../../../assets/images/under-construction.png" width="50" alt="">
-
-  <h1>Em construção</h1>
+<div class="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+  <img src="../../../assets/images/under-construction.png" width="100" alt="Em Construção" class="construction-image mb-4">
+  <h1 class="mb-3">Estamos Trabalhando em Algo Incrível!!</h1>
+  <p class="mb-4">
+    Estamos desenvolvendo uma plataforma inovadora de fluxo de caixa pessoal para ajudá-lo a gerenciar suas finanças de forma simples e eficiente.
+    Caso queira receber atualizações e ser avisado quando lançarmos, deixe seu email abaixo.
+  </p>
+  <form (ngSubmit)="subscribe(formEmail)" style="max-width: 400px; width: 100%;" novalidate>
+      <div class="input-group has-validation">
+          <input ngModel #formEmail="ngModel" [email]="true" name="email" type="email" class="form-control" placeholder="Seu email" aria-label="Seu email" autocomplete="off" required>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+          <div class="invalid-feedback" [class.d-block]="formEmail.touched && !formEmail.valid">
+            Insira um email valido.
+          </div>
+      </div>
+  </form>
 </div>

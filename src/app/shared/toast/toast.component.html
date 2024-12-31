@@ -1,0 +1,12 @@
+<div class="toast-container position-fixed p-3 {{ position }} {{ direction }}" data-bs-animation="true">
+  <div class="toast {{ type }}" role="alert" aria-live="assertive" aria-atomic="true" [ngClass]="{ 'show': isToastVisible }">
+    <div *ngIf="title" class="toast-header">
+      <strong class="me-auto">{{ title }}</strong>
+      <button type="button" class="btn-close" aria-label="Close" (click)="hideToast()"></button>
+    </div>
+    <div class="toast-body">
+      {{ toastMessage }}
+      <button *ngIf="!title" type="button" class="btn-close float-right" (click)="hideToast()" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

@@ -32,7 +32,7 @@ export class ApiService {
     return this.#http.post<any>(`${this.#baseUrl}/${endpoint}`, payload).pipe(
       catchError(error => {
         console.error('Erro ao criar dados:', error);
-        return throwError(() => new Error('Erro ao criar dados'));
+        return throwError(() => error);
       })
     );
   }
